@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+/* Swiper oklarını başlangıçta gizle */
+.swiper-button-next,
+.swiper-button-prev {
+    color: black;
+    /* Okların rengini siyah yap */
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    /* Başlangıçta oklar görünmesin */
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    /* Geçiş animasyonu */
+    z-index: 10;
+    /* Okların z-index değeri ile üstte görünmesini sağla */
+}
+
+/* Swiper üzerine gelindiğinde okları görünür yap */
+.swiper:hover .swiper-button-next,
+.swiper:hover .swiper-button-prev {
+    opacity: 1;
+    /* Okları görünür yap */
+    visibility: visible;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: black;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 20px;
+}
